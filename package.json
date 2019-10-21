@@ -1,0 +1,14 @@
+{
+  "name": "curso-web-backend-jose",
+  "version": "1.0.0",
+  "description": "primer API del curso",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "juxi34",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
