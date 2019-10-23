@@ -4,11 +4,14 @@
   "description": "primer API del curso",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
   },
   "author": "juxi34",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
   }
 }

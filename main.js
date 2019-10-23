@@ -2,6 +2,7 @@
 
 //Librerias
 const express = require('express')
+const colors = require('colors')
 
 //Aplicacion
 const app = express()
@@ -9,5 +10,5 @@ const app = express()
 var port = 8080
 
 app.listen(port, () => {
-  console.log('Felicidades tu aplicacion esta corriendo en: http://localhost:8080')
+  console.log(colors.blue("Tu API esta corriendo en: ") + colors.red('http://localhost:8080'))
 })
