@@ -1,6 +1,7 @@
 //Librerias
 const express = require('express')
 const bodyParser = require('body-parser')
+const Product = require('./models/product')
 
 //Aplicacion
 const app = express()
@@ -32,6 +33,22 @@ app.post('/nombre', (req, res) => {
   var name = req.body.name
 
   res.send('Hola ' + name + ' un gusto conocerte')
+})
+
+app.post('/NewProduct', (req, res) =>{
+  var product = new Product
+
+  product.name = req.body.name
+  product.price = req.body.price
+  product.description = req.body.description
+  product.category = req.body.category
+
+  product.save((err, productStored) => {
+    if(err){
+      res.send(`Ocurrio un error guardando el producto: ${err}`)
+    }
+    res.send({product: productStored})
+  })
 })
 
 module.exports = app
