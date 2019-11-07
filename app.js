@@ -43,11 +43,25 @@ app.post('/NewProduct', (req, res) =>{
   product.description = req.body.description
   product.category = req.body.category
 
-  product.save((err, productStored) => {
+  product.save((err, productStored) => {console.log(product.name)
+  
     if(err){
       res.send(`Ocurrio un error guardando el producto: ${err}`)
     }
+    
     res.send({product: productStored})
+  })
+})
+
+app.get('/MyProducts', (req, res) => {
+  Product.find({}, (err, products) => {
+    if(err) {
+      res.send(`Ocurrio un error: ${err}`)
+    }
+    if(!products) {
+      res.send('Ocurrio un error')
+    }
+    res.send({products})
   })
 })
 
